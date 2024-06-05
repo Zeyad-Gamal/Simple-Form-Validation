@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/newstyle.css">
+
+    <style>
+        .header{
+    background-color: white;
+}
+.header .navbar a{
+    color: #000;
+}
+
+
+
+.review{
+    width: 70%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.review .form{
+    flex: 1 1 41rem;
+    display: flex;
+  justify-content: center;
+
+}
+
+.review .form .review-form{
+    border-radius: 2rem;
+    background-color: white;
+    border-color: gold;
+    border-style: solid;
+    padding: 6rem;
+    padding-inline: 12rem;
+    width: 80%;
+
+}
+
+.review .form .review-form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+
+.review  .form .review-form .flex .inputBox{
+    flex: 1 1 41rem;
+}
+
+.review  .form .review-form .inputBoxsub{
+    display: flex;
+  justify-content: center;
+  width: 85%;
+}
+
+
+.review  .form .review-form .flex .inputBox input,select{
+    width:100%;
+    padding: 1.2rem 1.4rem;
+    font-size:1.6rem;
+    color:var(--light-black);
+    text-transform: none;
+    margin-top: 1.5rem;
+    border-color: #a8a6a6;
+    border-radius: 1rem;
+    background-color: var(--black);
+}
+textarea{
+    width:100%;
+    padding: 1.2rem 1.4rem;
+    font-size:1.6rem;
+    color:var(--light-black);
+    text-transform: none;
+    margin-top: 1.5rem;
+    border:var(--border);
+    resize: none;
+}
+.review  .form .review-form .flex .inputBox input:focus{
+    background: var(--black);
+    color: var(--white);
+}
+
+.review .form .review-form .flex .inputBox input::placeholder{
+text-transform: capitalize;
+}
+
+
+.review .form .review-form .flex .inputBox input:focus::placeholder{
+    color: var(--light-white);
+}
+
+.review .form .review-form .flex .inputBox span{
+    display: flex;
+    font-size:1.5rem;
+    color: var(--white);
+
+}
+
+.review .form .review-form .btn{
+    margin-left: 23%;
+    margin-top: 2rem;
+    background-color: #000;
+    color: aliceblue;
+    border-style: solid;
+    transition: 0.5s;
+}
+
+.review .form .review-form .btn:hover{
+    color: gold;
+    scale: 1.1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.review .form form .flex .inputBox .message{
+    background-color: blue;
+    height: 0;
+    opacity: 0;
+        }
+        .review .form form .flex .inputBox .message::after{
+            display: block;
+            content: "Name field required";
+            background-color: rgb(45, 45, 45);
+            color: whitesmoke;
+            white-space: pre;
+            position: relative;
+           top: -2rem;
+           word-wrap: break-word;
+           margin: 5px;
+           line-height: none; /* New content takes up original line height */
+           width: 21rem;
+           border-radius: 0.5rem;
+           padding: 1rem;
+           padding-right: 0.1rem;
+           font-size: 1.5rem;
+           color: gold;
+
+        }
+
+        #message2::after{
+            content: "Email field required";
+        }
+
+        #message3::after{
+            content: "Password field required";
+            width: 23rem;
+        }
+
+        #message4::after{
+            content: "Passwords do not match";
+            width: 23rem;
+        }
+
+        #message22::after{
+            content: "Invalid email format";
+            width: 23rem;
+        }
+
+        *{
+            transition: 1s;
+        }
+    </style>
+</head>
+<body style="background: url(cover2.png);  background-repeat: no-repeat;background-size: cover;">
+    
+
+    
+
+
+
+<section class="review">
+
+
+    <div class="form" >
+    <form name="myForm" action="" method="post" class="review-form" style="background-color: transparent;  backdrop-filter: blur(20px);border-color: aquamarine;">
+
+        <div class="flex">
+         <div class="inputBox">
+             <span>name :</span>
+             <input type="text" placeholder="enter your name" name="fname" oninput="fun()">
+             <div id="message1" class="message" ></div>
+         </div>
+ 
+
+         <div class="inputBox">
+            <span>email :</span>
+            <input type="email" placeholder="enter your email" name="faddress" oninput="fun()">
+            <div id="message2" class="message" ></div>
+            <div id="message22" class="message" ></div>
+
+
+        </div>
+
+
+         <div class="inputBox" >
+            <span>password :</span>
+            <input id="Password" type="password" placeholder="enter new password" name="fage" oninput="fun()">
+            <i class="fa fa-eye" id="eye" style="position: absolute;left: 74%;bottom: 42%;color: white;"></i>
+
+            <div id="message3" class="message" ></div>
+
+        </div>
+
+
+       
+        <div class="inputBox" >
+            <span>confirm password :</span>
+            <input id="Password2" type="password" placeholder="confirm password" name="fpassword" oninput="fun()">
+
+            <div id="message4" class="message" ></div>
+
+        </div>
+
+        
+
+
+        
+ 
+        
+ 
+        </div>
+ 
+        <div class="inputBox inputBoxsub" style="text-align: right;">
+            <input type="button" value="submit" class="btn" name="send" onclick="fun()">
+
+        </div>
+     </form>
+    </div>
+
+
+
+</section>
+
+
+
+
+<script>
+    function fun() {
+
+
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var nameid = document.getElementById("nameid");
+
+
+        var flag = 0;
+        var submitbutton = document.getElementById("submitbutton");
+
+        var a1 = document.getElementById("message1");
+        var a2 = document.getElementById("message2");
+        var a3 = document.getElementById("message3");
+        var a4 = document.getElementById("message4");
+
+
+        var a22 = document.getElementById("message22");
+
+
+
+
+        let x1 = document.forms["myForm"]["fname"].value;
+        let x2 = document.forms["myForm"]["faddress"].value;
+        let x3 = document.forms["myForm"]["fage"].value;
+        let x4 = document.forms["myForm"]["fpassword"].value;
+
+
+
+  if (x1 == "") {
+        a1.style.opacity=("1");
+        a1.style.transition=("1s");
+        
+        // hide other messages
+        a2.style.opacity=("0");
+        a3.style.opacity=("0");
+        a4.style.opacity=("0");
+    a22.style.opacity=("0");    
+
+        
+        flag=1;
+        // document.myForm.faddress.focus();
+    }
+
+  else if (x2=="") {
+        a2.style.opacity=("1");
+        a2.style.transition=("1s"); 
+        
+        // hide other messages
+        a1.style.opacity=("0");
+        a3.style.opacity=("0");
+        a4.style.opacity=("0");
+        a22.style.opacity=("0");    
+
+flag=1;
+// document.myForm.fage.focus();
+        
+  }
+
+
+
+ 
+
+
+
+   
+
+else if (!x2.match(validRegex)) {
+    a22.style.opacity=("1");
+    a22.style.transition=("1");
+    a2.style.opacity=("0")
+}
+
+
+
+
+
+// document.myForm.fage.focus();
+        
+  
+
+//   else if (!x2.match(validRegex) && x2=="") {
+//         a2.style.opacity=("1");
+
+//     a22.style.opacity=("0");    
+    
+// }
+
+// else if (!x2.match(validRegex) && x2!=="") {
+//         a2.style.opacity=("0");
+
+//     a22.style.opacity=("1");    
+    
+// }
+
+
+
+
+
+  else if (x3 == "") {
+
+    
+        a3.style.opacity=("1");
+        a3.style.transition=("1s"); 
+        
+        // hide other messages
+        a1.style.opacity=("0");
+        a2.style.opacity=("0");
+        a4.style.opacity=("0");
+        a22.style.opacity=("0");    
+
+        flag=1;
+        // document.myForm.fage.focus();
+        
+  }
+
+  else if(x4 == ""){
+        a4.style.opacity=("1");
+        a4.style.transition=("1s"); 
+        
+        // hide other messages
+        a1.style.opacity=("0");
+        a2.style.opacity=("0");
+        a3.style.opacity=("0");
+        a22.style.opacity=("0");    
+
+        flag=1;
+        // document.myForm.fage.focus();
+  }
+
+  else if(x1 !== ""){
+    a4.style.opacity=("0");
+        a4.style.transition=("1s"); 
+        
+        // hide other messages
+        a1.style.opacity=("0");
+        a2.style.opacity=("0");
+        a3.style.opacity=("0");
+        a22.style.opacity=("0");    
+
+        flag=1;
+  }
+
+
+
+  else if ((x2.match(validRegex))) {
+    a22.style.opacity=("0");
+    a2.style.opacity=("0")
+}
+
+
+
+   if(x4==x3 && x4.length==x3.length){
+    a4.style.opacity=("0");
+
+  }
+
+  
+   else{
+     a4.style.opacity=("1");
+    
+
+   }
+
+    
+
+
+
+  
+    
+    }
+
+
+//     document.getElementById("message3").addEventListener("input", function(){
+//         a3.style.opacity=("0");
+  
+// });
+    //     if(document.forms["myForm"]["fname"].value.length === 0){
+    //     document.getElementById("message").style.opacity=("1");
+    // }
+
+    // else if(document.forms["myForm"]["fname"].value.length > 0){
+    //     document.getElementById("message").style.opacity=("0");
+
+    // }
+    
+
+
+
+    
+  
+  
+ 
+
+    // let xvalid = document.forms["myForm"]["fname"].value;
+
+    // if(xvalid!=""){
+    //  var avalid = document.getElementById("message");
+    //  avalid.style.opacity=("0");
+
+    // }
+
+//     function validateForm() {
+//   let x = document.forms["myForm"]["fname"].value;
+//   if (x == "") {
+//     alert("Name must be filled out");
+//     return false;
+//   }
+
+</script>
+
+
+
+<script>
+
+const passwordInput = document.getElementById("Password");
+const passwordInput2 = document.getElementById("Password2");
+
+const eye = document.getElementById("eye");
+
+eye.addEventListener("click", function() {
+  if (passwordInput.type === "password"  &&  passwordInput2.type==="password") {
+    passwordInput.type = "text";
+    passwordInput2.type = "text";
+
+    eye.classList.remove("fa-eye");
+    eye.classList.add("fa-eye-slash");
+  } else {
+    passwordInput.type = "password";
+    passwordInput2.type = "password";
+
+    eye.classList.remove("fa-eye-slash");
+    eye.classList.add("fa-eye");
+  }
+});
+
+
+</script>
+
+
+
+
+
+<!-- <script src="js/script.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
